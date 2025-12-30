@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Брагуны — история села</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport" content="width=1024">
 
 <style>
 * {
@@ -17,6 +18,9 @@ body {
   background: #000;
   color: #f2f2f2;
   line-height: 1.8;
+  font-size: 18px;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 /* NAV */
@@ -25,20 +29,19 @@ nav {
   top: 0;
   width: 100%;
   background: rgba(0,0,0,0.95);
-  padding: 14px 16px;
+  padding: 14px 20px;
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 20px;
   z-index: 1000;
 }
 
 .logo {
   font-weight: bold;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   white-space: nowrap;
 }
 
-/* MENU (КАК БЫЛО) */
 .menu {
   display: flex;
   gap: 18px;
@@ -55,12 +58,10 @@ nav {
   opacity: 1;
 }
 
-/* LANG */
 .lang {
   margin-left: auto;
   display: flex;
   gap: 6px;
-  flex-shrink: 0;
 }
 
 .lang button {
@@ -70,7 +71,6 @@ nav {
   padding: 6px 14px;
   border-radius: 20px;
   cursor: pointer;
-  font-size: 0.75rem;
 }
 
 .lang button.active,
@@ -79,49 +79,37 @@ nav {
   color: #000;
 }
 
-/* BURGER */
 .burger {
   display: none;
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
-  flex-shrink: 0;
 }
 
 .burger span {
-  width: 24px;
+  width: 26px;
   height: 2px;
   background: #fff;
 }
 
-/* MOBILE — ТОЛЬКО СКРЫВАЕМ/ПОКАЗЫВАЕМ */
 @media (max-width: 768px) {
-  .burger {
-    display: flex;
-  }
+  .burger { display: flex; }
 
   .menu {
     position: absolute;
-    top: 56px;
+    top: 60px;
     left: 0;
     width: 100%;
-    padding: 12px 10px;
     background: rgba(0,0,0,0.95);
-
-    /* ОСТАЁТСЯ ГОРИЗОНТАЛЬНЫМ */
+    padding: 12px 14px;
     display: none;
     flex-direction: row;
     gap: 16px;
     overflow-x: auto;
   }
 
-  .menu.show {
-    display: flex;
-  }
-
-  .menu::-webkit-scrollbar {
-    display: none;
-  }
+  .menu.show { display: flex; }
+  .menu::-webkit-scrollbar { display: none; }
 }
 
 /* HERO */
@@ -135,11 +123,10 @@ nav {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 20px;
 }
 
 .hero h1 {
-  font-size: clamp(3rem, 7vw, 5rem);
+  font-size: 64px;
   letter-spacing: 6px;
 }
 
@@ -148,16 +135,9 @@ nav {
   opacity: 0.85;
 }
 
-/* CAPTION */
-.caption {
-  text-align: center;
-  margin-top: -40px;
-  opacity: 0.7;
-}
-
 /* CONTENT */
 .container {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 100px auto;
   padding: 0 20px;
 }
@@ -166,18 +146,18 @@ nav {
   background: #111;
   border-radius: 26px;
   padding: 50px;
-  margin-top: 60px;
+  margin-top: 70px;
 }
 
 .card h2 {
   text-align: center;
   margin-bottom: 30px;
   letter-spacing: 2px;
+  font-size: 32px;
 }
 
 .card p {
-  margin-bottom: 20px;
-  opacity: 0.92;
+  margin-bottom: 22px;
   text-align: justify;
 }
 
@@ -190,11 +170,11 @@ nav {
 /* QR */
 .qr {
   text-align: center;
-  margin: 80px 0;
+  margin: 90px 0;
 }
 
 .qr img {
-  width: 200px;
+  width: 220px;
   background: #fff;
   padding: 12px;
   border-radius: 18px;
@@ -205,7 +185,6 @@ footer {
   text-align: center;
   padding: 40px 20px;
   opacity: 0.6;
-  font-size: 0.85rem;
 }
 </style>
 </head>
@@ -222,7 +201,6 @@ footer {
   <div class="menu" id="menu">
     <a href="#home" data-ru="Главная" data-en="Home">Главная</a>
     <a href="#history" data-ru="История" data-en="History">История</a>
-    <a href="#facts" data-ru="Факты" data-en="Facts">Факты</a>
     <a href="#map" data-ru="Карта" data-en="Map">Карта</a>
     <a href="#gallery" data-ru="Галерея" data-en="Gallery">Галерея</a>
   </div>
@@ -241,38 +219,25 @@ footer {
   </p>
 </section>
 
-<div class="caption">
-  <p data-ru="Село Брагуны. Кавказ."
-     data-en="Braguny village. Caucasus.">
-     Село Брагуны. Кавказ.
-  </p>
-</div>
-
 <section class="container">
 
 <div class="card" id="history">
-<h2 data-ru="Село Брагуны — живая история"
-    data-en="Braguny — a living history">
-Село Брагуны — живая история
+<h2 data-ru="Село Брагуны — живая история Кавказа"
+    data-en="Braguny — a living history of the Caucasus">
+Село Брагуны — живая история Кавказа
 </h2>
 
-<p data-ru="Брагуны — это земля с глубокой исторической памятью и судьбой поколений."
-   data-en="Braguny is a land of deep historical memory and generations.">
-Брагуны — это земля с глубокой исторической памятью и судьбой поколений.
-</p>
+<p>Село Брагуны — одно из древних поселений Кавказа, история которого формировалась на протяжении многих веков. Эти земли издавна привлекали людей своим удобным расположением, плодородными почвами и близостью торговых путей.</p>
 
-<p data-ru="Село возникло благодаря выгодному географическому положению и плодородным землям."
-   data-en="The village emerged due to its favorable location and fertile lands.">
-Село возникло благодаря выгодному географическому положению и плодородным землям.
-</p>
-</div>
+<p>Первые поселения возникли здесь задолго до появления современных административных границ. Люди селились семьями и родами, занимались земледелием, скотоводством и ремёслами. Важную роль играли традиции взаимопомощи и уважения к старшим.</p>
 
-<div class="card" id="facts">
-<h2 data-ru="Интересные факты" data-en="Interesting facts">Интересные факты</h2>
-<p data-ru="• Брагуны находятся в исторически важном регионе Кавказа."
-   data-en="• Braguny is located in a historically important region of the Caucasus.">
-• Брагуны находятся в исторически важном регионе Кавказа.
-</p>
+<p>Название села передавалось из поколения в поколение, обрастая легендами и преданиями. Старожилы хранили устные рассказы о первых поселенцах, о тяжёлых временах и периодах расцвета.</p>
+
+<p>На протяжении истории Брагуны не раз становились свидетелями крупных исторических событий. Несмотря на войны, переселения и трудные годы, жители сохраняли язык, культуру, обычаи и веру.</p>
+
+<p>XX век принёс селу серьёзные испытания, но именно в этот период сформировался современный облик Брагунов. Люди восстанавливали дома, развивали хозяйство, передавали память о прошлом детям.</p>
+
+<p>Сегодня Брагуны — это не просто населённый пункт. Это символ преемственности поколений, уважения к истории и связи человека с родной землёй. История села продолжается, и каждый житель является её частью.</p>
 </div>
 
 <div class="card" id="map">
@@ -283,17 +248,12 @@ width="100%" height="400" style="border-radius:20px;border:0;"></iframe>
 
 <div class="card gallery" id="gallery">
 <h2 data-ru="Галерея" data-en="Gallery">Галерея</h2>
-<a href="braguny.jpg" target="_blank">
-  <img src="braguny.jpg">
-</a>
+<img src="braguny.jpg">
 </div>
 
 <div class="qr">
 <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://holawer999-cmyk.github.io/borg1aner/">
-<p data-ru="Сканируйте QR-код для входа на сайт"
-   data-en="Scan the QR code to open the site">
-Сканируйте QR-код для входа на сайт
-</p>
+<p>Сканируйте QR-код для перехода на сайт</p>
 </div>
 
 </section>
@@ -302,19 +262,19 @@ width="100%" height="400" style="border-radius:20px;border:0;"></iframe>
 
 <script>
 function toggleMenu() {
-  document.getElementById('menu').classList.toggle('show');
+  document.getElementById("menu").classList.toggle("show");
 }
 
 function setLang(lang) {
-  document.querySelectorAll('[data-ru]').forEach(el => {
-    el.innerText = el.getAttribute('data-' + lang);
+  document.querySelectorAll("[data-ru]").forEach(el => {
+    el.innerText = el.getAttribute("data-" + lang);
   });
 
-  ruBtn.classList.remove('active');
-  enBtn.classList.remove('active');
-  document.getElementById(lang + 'Btn').classList.add('active');
+  ruBtn.classList.remove("active");
+  enBtn.classList.remove("active");
+  document.getElementById(lang + "Btn").classList.add("active");
 
-  document.getElementById('menu').classList.remove('show');
+  document.getElementById("menu").classList.remove("show");
 }
 </script>
 
