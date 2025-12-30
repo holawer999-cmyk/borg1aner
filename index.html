@@ -19,28 +19,59 @@ body {
   line-height: 1.8;
 }
 
-/* MENU */
+/* NAV */
 nav {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(0,0,0,0.85);
-  padding: 15px;
-  text-align: center;
+  background: rgba(0,0,0,0.9);
+  padding: 14px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
   z-index: 1000;
 }
 
-nav a, nav span {
+nav a {
   color: #fff;
-  margin: 0 12px;
   text-decoration: none;
-  font-weight: 500;
+  opacity: 0.85;
   letter-spacing: 1px;
-  opacity: 0.9;
 }
 
 nav a:hover {
-  text-decoration: underline;
+  opacity: 1;
+}
+
+/* LANGUAGE BUTTONS */
+.lang {
+  margin-left: 20px;
+  display: flex;
+  gap: 6px;
+}
+
+.lang button {
+  background: transparent;
+  border: 1px solid #555;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.lang button:hover {
+  background: #fff;
+  color: #000;
+}
+
+.lang button.active {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
 }
 
 /* HERO */
@@ -60,20 +91,18 @@ nav a:hover {
 .hero h1 {
   font-size: clamp(3rem, 7vw, 5rem);
   letter-spacing: 6px;
-  animation: fadeIn 2s ease;
 }
 
 .hero p {
   margin-top: 15px;
-  font-size: 1.1rem;
   opacity: 0.85;
 }
 
-/* PHOTO CAPTION */
+/* CAPTION */
 .caption {
   text-align: center;
   margin-top: -40px;
-  opacity: 0.75;
+  opacity: 0.7;
 }
 
 /* CONTENT */
@@ -85,15 +114,14 @@ nav a:hover {
 
 .card {
   background: #111;
-  border-radius: 25px;
+  border-radius: 26px;
   padding: 50px;
   margin-top: 60px;
-  box-shadow: 0 0 60px rgba(0,0,0,0.8);
 }
 
 .card h2 {
   text-align: center;
-  font-size: 2.2rem;
+  font-size: 2.1rem;
   margin-bottom: 30px;
   letter-spacing: 2px;
 }
@@ -111,6 +139,11 @@ nav a:hover {
   border-radius: 20px;
 }
 
+/* MAP */
+iframe {
+  border-radius: 20px;
+}
+
 /* QR */
 .qr {
   text-align: center;
@@ -121,30 +154,18 @@ nav a:hover {
   width: 200px;
   background: #fff;
   padding: 12px;
-  border-radius: 16px;
-}
-
-.qr p {
-  margin-top: 15px;
-  font-size: 0.9rem;
-  opacity: 0.8;
+  border-radius: 18px;
 }
 
 /* FOOTER */
 footer {
   text-align: center;
   padding: 40px 20px;
-  font-size: 0.85rem;
   opacity: 0.6;
+  font-size: 0.85rem;
 }
 
-/* ANIMATIONS */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@media (max-width: 600px) {
+@media (max-width:600px) {
   .card {
     padding: 30px;
   }
@@ -158,99 +179,109 @@ footer {
 <body>
 
 <nav>
-  <a href="#home">Главная</a>
-  <a href="#history">История</a>
-  <a href="#facts">Факты</a>
-  <a href="#map">Карта</a>
-  <a href="#gallery">Галерея</a>
-  <a href="#qr">QR</a>
-  <span>RU / EN</span>
+  <a href="#home" data-ru="Главная" data-en="Home">Главная</a>
+  <a href="#history" data-ru="История" data-en="History">История</a>
+  <a href="#facts" data-ru="Факты" data-en="Facts">Факты</a>
+  <a href="#map" data-ru="Карта" data-en="Map">Карта</a>
+  <a href="#gallery" data-ru="Галерея" data-en="Gallery">Галерея</a>
+
+  <div class="lang">
+    <button id="ruBtn" class="active" onclick="setLang('ru')">RU</button>
+    <button id="enBtn" onclick="setLang('en')">EN</button>
+  </div>
 </nav>
 
 <section class="hero" id="home">
-  <h1>БРАГУНЫ</h1>
-  <p>история · память · происхождение</p>
+  <h1 data-ru="БРАГУНЫ" data-en="BRAGUNY">БРАГУНЫ</h1>
+  <p data-ru="история · память · происхождение"
+     data-en="history · memory · origins">
+     история · память · происхождение
+  </p>
 </section>
 
 <div class="caption">
-  <p>Село Брагуны. Кавказ. Историческая земля.</p>
+  <p data-ru="Село Брагуны. Кавказ."
+     data-en="Braguny village. Caucasus.">
+     Село Брагуны. Кавказ.
+  </p>
 </div>
 
 <section class="container">
 
 <div class="card" id="history">
-<h2>Село Брагуны — живая история</h2>
+<h2 data-ru="Село Брагуны — живая история"
+    data-en="Braguny — a living history">
+Село Брагуны — живая история
+</h2>
 
-<p>
-Брагуны — это не просто название на карте. Это земля с глубокой исторической
-памятью, место, где веками формировалась жизнь, культура и характер людей.
-История села — это история поколений, труда, испытаний и неразрывной связи
-человека со своей родной землёй.
+<p data-ru="Брагуны — это не просто название на карте. Это земля с глубокой исторической памятью, где веками формировалась жизнь людей."
+   data-en="Braguny is not just a name on the map. It is a land of deep historical memory where generations lived.">
+Брагуны — это не просто название на карте. Это земля с глубокой исторической памятью, где веками формировалась жизнь людей.
 </p>
 
-<p>
-Село возникло в результате сложных исторических процессов, связанных с
-расселением народов Кавказа. Эти места издавна привлекали людей своим
-выгодным географическим положением, близостью водных источников и
-плодородными землями.
+<p data-ru="Село возникло благодаря выгодному географическому положению, плодородным землям и близости водных источников."
+   data-en="The village emerged due to its favorable location, fertile lands and access to water.">
+Село возникло благодаря выгодному географическому положению, плодородным землям и близости водных источников.
 </p>
 
-<p>
-Происхождение названия «Брагуны» связывают с родовыми объединениями,
-сыгравшими ключевую роль в основании села. Название стало символом
-принадлежности к своей земле, памяти предков и общей судьбы.
-</p>
-
-<p>
-На протяжении веков жители Брагун занимались земледелием, скотоводством
-и ремёслами. Здесь всегда ценились уважение к старшим, взаимопомощь
-и сохранение традиций.
-</p>
-
-<p>
-Сегодня Брагуны — это связь прошлого и настоящего. Этот сайт создан как
-цифровая летопись села, чтобы сохранить историю и передать её будущим
-поколениям.
+<p data-ru="Название села связано с родовыми объединениями и исторической памятью предков."
+   data-en="The name of the village is linked to ancestral clans and historical heritage.">
+Название села связано с родовыми объединениями и исторической памятью предков.
 </p>
 </div>
 
 <div class="card" id="facts">
-<h2>Интересные факты</h2>
-<p>• Брагуны расположены в исторически важной части Кавказа.</p>
-<p>• Название села имеет несколько версий происхождения.</p>
-<p>• Традиции устной передачи истории сохранялись веками.</p>
-<p>• Село всегда играло важную роль в жизни окружающих территорий.</p>
+<h2 data-ru="Интересные факты" data-en="Interesting facts">Интересные факты</h2>
+<p data-ru="• Брагуны находятся в исторически значимом регионе Кавказа."
+   data-en="• Braguny is located in a historically important region of the Caucasus.">
+• Брагуны находятся в исторически значимом регионе Кавказа.
+</p>
+<p data-ru="• История села передавалась устно из поколения в поколение."
+   data-en="• The history of the village was passed orally through generations.">
+• История села передавалась устно из поколения в поколение.
+</p>
 </div>
 
 <div class="card" id="map">
-<h2>Где находятся Брагуны</h2>
+<h2 data-ru="Карта" data-en="Map">Карта</h2>
 <iframe
 src="https://www.google.com/maps?q=Брагуны&output=embed"
-width="100%" height="400"
-style="border:0;border-radius:20px;">
+width="100%" height="400">
 </iframe>
 </div>
 
 <div class="card gallery" id="gallery">
-<h2>Галерея</h2>
+<h2 data-ru="Галерея" data-en="Gallery">Галерея</h2>
 <a href="braguny.jpg" target="_blank">
-  <img src="braguny.jpg">
+<img src="braguny.jpg">
 </a>
-<p style="text-align:center;opacity:0.7;margin-top:10px;">
-Нажмите на изображение, чтобы открыть в полном размере
-</p>
 </div>
 
-<div class="qr" id="qr">
+<div class="qr">
 <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://holawer999-cmyk.github.io/borg1aner/">
-<p>Отсканируйте QR-код, чтобы открыть сайт с телефона</p>
+<p data-ru="Сканируйте QR-код для входа на сайт"
+   data-en="Scan the QR code to open the site">
+Сканируйте QR-код для входа на сайт
+</p>
 </div>
 
 </section>
 
 <footer>
-© Брагуны · цифровая история
+© Braguny
 </footer>
+
+<script>
+function setLang(lang) {
+  document.querySelectorAll('[data-ru]').forEach(el => {
+    el.innerText = el.getAttribute('data-' + lang);
+  });
+
+  document.getElementById('ruBtn').classList.remove('active');
+  document.getElementById('enBtn').classList.remove('active');
+  document.getElementById(lang + 'Btn').classList.add('active');
+}
+</script>
 
 </body>
 </html>
