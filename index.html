@@ -2,62 +2,165 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>борганер</title>
+    <title>БОРГАНЕР</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
-            padding: 0;
-            background-color: #000;
-            color: #ffffff;
-            font-family: Arial, Helvetica, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             min-height: 100vh;
+            background:
+                radial-gradient(circle at top, #1a1a1a 0%, #000 55%),
+                repeating-linear-gradient(
+                    0deg,
+                    rgba(255,255,255,0.02),
+                    rgba(255,255,255,0.02) 1px,
+                    transparent 1px,
+                    transparent 3px
+                );
+            color: #eaeaea;
+            font-family: "Segoe UI", Arial, sans-serif;
+            overflow-x: hidden;
         }
 
-        .container {
-            max-width: 900px;
-            padding: 40px;
+        .wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 20px;
+            animation: pageIn 1.5s ease;
+        }
+
+        @keyframes pageIn {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero {
             text-align: center;
+            margin-bottom: 70px;
         }
 
-        h1 {
-            font-size: 64px;
-            margin-bottom: 30px;
-            letter-spacing: 2px;
+        .hero h1 {
+            font-size: clamp(48px, 9vw, 96px);
+            letter-spacing: 8px;
+            margin: 0;
+            text-transform: uppercase;
+            color: #fff;
+            text-shadow:
+                0 0 10px rgba(255,255,255,0.4),
+                0 0 40px rgba(255,255,255,0.15);
         }
 
-        p {
+        .hero p {
+            margin-top: 20px;
             font-size: 18px;
-            line-height: 1.6;
+            color: #bcbcbc;
+            letter-spacing: 1px;
+        }
+
+        .card {
+            background: rgba(20, 20, 20, 0.85);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow:
+                0 20px 60px rgba(0,0,0,0.6),
+                inset 0 0 30px rgba(255,255,255,0.03);
+            animation: cardFade 2s ease forwards;
+        }
+
+        @keyframes cardFade {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card h2 {
+            margin-top: 0;
+            margin-bottom: 25px;
+            font-size: 28px;
+            letter-spacing: 2px;
+            color: #ffffff;
+        }
+
+        .card p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 20px;
             text-align: justify;
+            color: #dddddd;
+        }
+
+        footer {
+            margin-top: 80px;
+            text-align: center;
+            font-size: 14px;
+            color: #777;
+            opacity: 0.6;
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                padding: 25px;
+            }
+            .card p {
+                font-size: 16px;
+                text-align: left;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>борганер</h1>
 
-        <p>
-            Село Брагуны имеет глубокие исторические корни и связано с жизнью и бытом
-            народов, населявших эти земли на протяжении многих веков. Его происхождение
-            уходит в далёкое прошлое, когда первые поселения возникали рядом с источниками
-            воды и плодородными землями.
-        </p>
+    <div class="wrapper">
+        <div class="hero">
+            <h1>БОРГАНЕР</h1>
+            <p>история • память • происхождение</p>
+        </div>
 
-        <p>
-            По преданиям, название села связано с родовыми объединениями и фамильными
-            линиями, которые играли важную роль в формировании местного сообщества.
-            Брагуны развивались как место земледелия, скотоводства и ремёсел, сохраняя
-            традиции и устои предков.
-        </p>
+        <div class="card">
+            <h2>Происхождение села Брагуны</h2>
 
-        <p>
-            История села — это история людей, их борьбы, труда и стремления сохранить
-            свою культуру и землю. Сегодня Брагуны остаются символом преемственности
-            поколений и уважения к прошлому.
-        </p>
+            <p>
+                Село Брагуны сформировалось в глубине исторических процессов,
+                связанных с расселением народов Кавказа. Эти земли выбирались
+                не случайно — близость воды, плодородные почвы и стратегическое
+                положение делали их пригодными для жизни.
+            </p>
+
+            <p>
+                Название села связывают с родовыми объединениями, которые
+                сыграли ключевую роль в формировании местного сообщества.
+                Здесь веками складывались традиции, передавались обычаи
+                и сохранялась связь поколений.
+            </p>
+
+            <p>
+                История Брагун — это не просто даты и события, а живая память
+                людей, их труда, испытаний и стремления сохранить свою землю
+                и идентичность.
+            </p>
+        </div>
+
+        <footer>
+            © borg1aner • цифровая хроника
+        </footer>
     </div>
+
 </body>
 </html>
