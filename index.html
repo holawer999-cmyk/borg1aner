@@ -25,21 +25,24 @@ nav {
   top: 0;
   width: 100%;
   background: rgba(0,0,0,0.95);
-  padding: 14px 20px;
+  padding: 14px 16px;
   display: flex;
   align-items: center;
+  gap: 18px;
   z-index: 1000;
 }
 
 .logo {
   font-weight: bold;
   letter-spacing: 2px;
+  white-space: nowrap;
 }
 
+/* MENU (КАК БЫЛО) */
 .menu {
   display: flex;
   gap: 18px;
-  margin-left: 30px;
+  white-space: nowrap;
 }
 
 .menu a {
@@ -57,6 +60,7 @@ nav {
   margin-left: auto;
   display: flex;
   gap: 6px;
+  flex-shrink: 0;
 }
 
 .lang button {
@@ -80,8 +84,8 @@ nav {
   display: none;
   flex-direction: column;
   gap: 5px;
-  margin-left: 15px;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .burger span {
@@ -90,25 +94,33 @@ nav {
   background: #fff;
 }
 
-/* MOBILE */
+/* MOBILE — ТОЛЬКО СКРЫВАЕМ/ПОКАЗЫВАЕМ */
 @media (max-width: 768px) {
+  .burger {
+    display: flex;
+  }
+
   .menu {
     position: absolute;
-    top: 60px;
+    top: 56px;
     left: 0;
     width: 100%;
-    background: #000;
-    flex-direction: column;
-    padding: 20px;
+    padding: 12px 10px;
+    background: rgba(0,0,0,0.95);
+
+    /* ОСТАЁТСЯ ГОРИЗОНТАЛЬНЫМ */
     display: none;
+    flex-direction: row;
+    gap: 16px;
+    overflow-x: auto;
   }
 
   .menu.show {
     display: flex;
   }
 
-  .burger {
-    display: flex;
+  .menu::-webkit-scrollbar {
+    display: none;
   }
 }
 
@@ -134,6 +146,13 @@ nav {
 .hero p {
   margin-top: 15px;
   opacity: 0.85;
+}
+
+/* CAPTION */
+.caption {
+  text-align: center;
+  margin-top: -40px;
+  opacity: 0.7;
 }
 
 /* CONTENT */
@@ -222,6 +241,13 @@ footer {
   </p>
 </section>
 
+<div class="caption">
+  <p data-ru="Село Брагуны. Кавказ."
+     data-en="Braguny village. Caucasus.">
+     Село Брагуны. Кавказ.
+  </p>
+</div>
+
 <section class="container">
 
 <div class="card" id="history">
@@ -230,17 +256,22 @@ footer {
 Село Брагуны — живая история
 </h2>
 
-<p data-ru="Брагуны — это земля с глубокой историей и памятью поколений."
-   data-en="Braguny is a land of deep history and generational memory.">
-Брагуны — это земля с глубокой историей и памятью поколений.
+<p data-ru="Брагуны — это земля с глубокой исторической памятью и судьбой поколений."
+   data-en="Braguny is a land of deep historical memory and generations.">
+Брагуны — это земля с глубокой исторической памятью и судьбой поколений.
+</p>
+
+<p data-ru="Село возникло благодаря выгодному географическому положению и плодородным землям."
+   data-en="The village emerged due to its favorable location and fertile lands.">
+Село возникло благодаря выгодному географическому положению и плодородным землям.
 </p>
 </div>
 
 <div class="card" id="facts">
 <h2 data-ru="Интересные факты" data-en="Interesting facts">Интересные факты</h2>
-<p data-ru="• Село расположено в историческом регионе Кавказа."
-   data-en="• The village is located in the historical Caucasus region.">
-• Село расположено в историческом регионе Кавказа.
+<p data-ru="• Брагуны находятся в исторически важном регионе Кавказа."
+   data-en="• Braguny is located in a historically important region of the Caucasus.">
+• Брагуны находятся в исторически важном регионе Кавказа.
 </p>
 </div>
 
