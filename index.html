@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>БОРГАНЕР</title>
+    <title>Брагуны — история села</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
@@ -12,112 +12,99 @@
 
         body {
             margin: 0;
-            min-height: 100vh;
-            background:
-                radial-gradient(circle at top, #1a1a1a 0%, #000 55%),
-                repeating-linear-gradient(
-                    0deg,
-                    rgba(255,255,255,0.02),
-                    rgba(255,255,255,0.02) 1px,
-                    transparent 1px,
-                    transparent 3px
-                );
-            color: #eaeaea;
             font-family: "Segoe UI", Arial, sans-serif;
-            overflow-x: hidden;
+            background: linear-gradient(180deg, #0b0b0b, #000);
+            color: #f0f0f0;
         }
 
-        .wrapper {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 80px 20px;
-            animation: pageIn 1.5s ease;
-        }
-
-        @keyframes pageIn {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero {
+        header {
             text-align: center;
-            margin-bottom: 70px;
+            padding: 80px 20px 40px;
         }
 
-        .hero h1 {
-            font-size: clamp(48px, 9vw, 96px);
-            letter-spacing: 8px;
+        header h1 {
+            font-size: clamp(48px, 8vw, 96px);
+            letter-spacing: 6px;
             margin: 0;
             text-transform: uppercase;
-            color: #fff;
-            text-shadow:
-                0 0 10px rgba(255,255,255,0.4),
-                0 0 40px rgba(255,255,255,0.15);
+            text-shadow: 0 0 20px rgba(255,255,255,0.25);
         }
 
-        .hero p {
+        header p {
             margin-top: 20px;
-            font-size: 18px;
             color: #bcbcbc;
+            font-size: 18px;
             letter-spacing: 1px;
         }
 
-        .card {
-            background: rgba(20, 20, 20, 0.85);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow:
-                0 20px 60px rgba(0,0,0,0.6),
-                inset 0 0 30px rgba(255,255,255,0.03);
-            animation: cardFade 2s ease forwards;
+        .photo {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
 
-        @keyframes cardFade {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .photo img {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.7);
+        }
+
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .card {
+            background: rgba(20,20,20,0.9);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: inset 0 0 40px rgba(255,255,255,0.03);
         }
 
         .card h2 {
             margin-top: 0;
-            margin-bottom: 25px;
-            font-size: 28px;
             letter-spacing: 2px;
-            color: #ffffff;
         }
 
         .card p {
-            font-size: 18px;
             line-height: 1.8;
-            margin-bottom: 20px;
+            font-size: 18px;
+            color: #e0e0e0;
             text-align: justify;
-            color: #dddddd;
+        }
+
+        .qr {
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .qr img {
+            width: 200px;
+            background: #fff;
+            padding: 12px;
+            border-radius: 16px;
+        }
+
+        .qr p {
+            margin-top: 15px;
+            font-size: 16px;
+            color: #bcbcbc;
         }
 
         footer {
-            margin-top: 80px;
             text-align: center;
+            padding: 40px 20px;
             font-size: 14px;
             color: #777;
-            opacity: 0.6;
+            opacity: 0.7;
         }
 
         @media (max-width: 600px) {
             .card {
                 padding: 25px;
             }
+
             .card p {
                 font-size: 16px;
                 text-align: left;
@@ -127,40 +114,48 @@
 </head>
 <body>
 
-    <div class="wrapper">
-        <div class="hero">
-            <h1>БОРГАНЕР</h1>
-            <p>история • память • происхождение</p>
-        </div>
+<header>
+    <h1>БРАГУНЫ</h1>
+    <p>история • память • происхождение</p>
+</header>
 
-        <div class="card">
-            <h2>Происхождение села Брагуны</h2>
+<div class="photo">
+    <img src="braguny.jpg" alt="Село Брагуны">
+</div>
 
-            <p>
-                Село Брагуны сформировалось в глубине исторических процессов,
-                связанных с расселением народов Кавказа. Эти земли выбирались
-                не случайно — близость воды, плодородные почвы и стратегическое
-                положение делали их пригодными для жизни.
-            </p>
+<div class="content">
+    <div class="card">
+        <h2>История села</h2>
 
-            <p>
-                Название села связывают с родовыми объединениями, которые
-                сыграли ключевую роль в формировании местного сообщества.
-                Здесь веками складывались традиции, передавались обычаи
-                и сохранялась связь поколений.
-            </p>
+        <p>
+            Село Брагуны сформировалось в результате исторических процессов,
+            связанных с расселением народов Кавказа. Эти земли издавна
+            привлекали людей плодородными почвами, близостью воды и
+            удобным расположением.
+        </p>
 
-            <p>
-                История Брагун — это не просто даты и события, а живая память
-                людей, их труда, испытаний и стремления сохранить свою землю
-                и идентичность.
-            </p>
-        </div>
+        <p>
+            Название села связывают с родовыми объединениями, сыгравшими
+            ключевую роль в формировании местного сообщества. Здесь
+            веками складывались традиции, уклад жизни и культура,
+            передававшиеся из поколения в поколение.
+        </p>
 
-        <footer>
-            © borg1aner • цифровая хроника
-        </footer>
+        <p>
+            История Брагун — это живая память людей, их труда, испытаний
+            и стремления сохранить свою землю и идентичность.
+        </p>
     </div>
+
+    <div class="qr">
+        <img src="qr.png" alt="QR код сайта">
+        <p>Открой сайт с телефона</p>
+    </div>
+</div>
+
+<footer>
+    © Брагуны • цифровая история
+</footer>
 
 </body>
 </html>
